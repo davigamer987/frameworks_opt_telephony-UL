@@ -3205,6 +3205,7 @@ public class GsmCdmaPhone extends Phone {
         handleNullCipherEnabledChange();
         handleIdentifierDisclosureNotificationPreferenceChange();
         handleNullCipherNotificationPreferenceChanged();
+        startLceAfterRadioIsAvailable();
     }
 
     private void handleRadioOn() {
@@ -4658,6 +4659,7 @@ public class GsmCdmaPhone extends Phone {
         } else {
             loge("deleteAndCreatePhone: newVoiceRadioTech=" + newVoiceRadioTech +
                     " is not CDMA or GSM (error) - aborting!");
+            return;
         }
     }
 
